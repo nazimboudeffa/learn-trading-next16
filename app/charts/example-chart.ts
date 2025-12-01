@@ -1,7 +1,7 @@
 import { ChartElement } from "./types";
 
 export const chart1: ChartElement = {
-  id: "chart1",
+  id: "example-chart",
   name: "Graphique de Trading Simple",
   description: "Un graphique simple affichant des chandeliers japonais.",
   data: [
