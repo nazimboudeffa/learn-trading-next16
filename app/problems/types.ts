@@ -1,4 +1,4 @@
-export type ChartElement = {
+export type ProblemElement = {
   id: string;
   name: string;
   description: string;

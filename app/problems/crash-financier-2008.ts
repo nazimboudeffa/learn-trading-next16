@@ -1,6 +1,6 @@
-import { ChartElement } from "./types";
+import { ProblemElement } from "./types";
 
-export const chart2008: ChartElement = {
+export const chart2008: ProblemElement = {
   id: "crash-financier-2008",
   name: "Crash Financier 2008",
   description: "Un graphique représentant le crash financier de 2008.",

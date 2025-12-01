@@ -4,7 +4,7 @@ import { chartCovid } from "./krach-covid-2020";
 import { chartBTC2017 } from "./bullrun-bitcoin-2017";
 import { chartFTX2022 } from "./crash-ftx-2022";
 
-export const charts = [
+export const problems = [
     chart1,
     chart2008,
     chartCovid,

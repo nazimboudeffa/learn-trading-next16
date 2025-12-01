@@ -8,8 +8,8 @@ export default function Navbar() {
           Apprendre le Trading
         </Link>
         <div className="flex gap-6">
-          <Link href="/configurations" className="text-base font-medium text-zinc-700 dark:text-zinc-200 hover:text-indigo-600 dark:hover:text-cyan-400 transition">
-            Configurations
+          <Link href="/charts" className="text-base font-medium text-zinc-700 dark:text-zinc-200 hover:text-indigo-600 dark:hover:text-cyan-400 transition">
+            Tous les Graphiques
           </Link>
         </div>
       </div>

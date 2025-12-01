@@ -1,6 +1,6 @@
-import { ChartElement } from "./types";
+import { ProblemElement } from "./types";
 
-export const chartFTX2022: ChartElement = {
+export const chartFTX2022: ProblemElement = {
   id: "crash-ftx-2022",
   name: "Crash Crypto - Effondrement de FTX (2022)",
   description: "Un graphique montrant la chute brutale du Bitcoin lors de la débâcle FTX.",

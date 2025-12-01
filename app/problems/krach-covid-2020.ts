@@ -1,6 +1,6 @@
-import { ChartElement } from "./types";
+import { ProblemElement } from "./types";
 
-export const chartCovid: ChartElement = {
+export const chartCovid: ProblemElement = {
   id: "krach-covid-2020",
   name: "Krach du COVID-19 (2020)",
   description: "Un graphique représentant la chute violente des marchés lors du début de la pandémie.",

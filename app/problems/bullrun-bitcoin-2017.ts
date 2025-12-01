@@ -1,6 +1,6 @@
-import { ChartElement } from "./types";
+import { ProblemElement } from "./types";
 
-export const chartBTC2017: ChartElement = {
+export const chartBTC2017: ProblemElement = {
   id: "bullrun-bitcoin-2017",
   name: "Bull-Run Bitcoin 2017",
   description: "L'ascension spectaculaire du Bitcoin en décembre 2017.",

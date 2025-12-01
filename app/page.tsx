@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Navbar from "./components/Navbar";
-import { charts } from "./charts/index";
+import { problems } from "./problems/index";
 
 export default function Home() {
   return (
@@ -16,25 +16,25 @@ export default function Home() {
           </svg>
         </div>
         <h1 className="relative z-10 text-5xl sm:text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-linear-to-r from-indigo-700 via-blue-700 to-cyan-600 dark:from-indigo-200 dark:via-blue-200 dark:to-cyan-200 drop-shadow-lg">
-          Apprenez le Trading, <br />Maîtrisez Votre Avenir
+          Maitrisez les Actifs Financiers
         </h1>
         <p className="relative z-10 max-w-2xl text-xl sm:text-2xl mb-10 text-blue-900 dark:text-blue-100 font-medium">
-          Rejoignez une communauté de passionnés et accédez à des configurations de trading prêtes à l&apos;emploi pour booster votre apprentissage et transformer votre passion en expertise.
+          Accédez à des graphiques de trading prêtes à l&apos;emploi pour booster votre apprentissage et transformer votre passion en expertise.
         </p>
       </section>
 
       {/* Configurations Section */}
       <section id="configurations" className="max-w-5xl mx-auto py-16 px-4">
-        <h2 className="text-3xl font-bold mb-8 text-indigo-800 dark:text-indigo-100 text-center">Configurations Populaires</h2>
+        <h2 className="text-3xl font-bold mb-8 text-indigo-800 dark:text-indigo-100 text-center">Graphiques Populaires</h2>
         <ul className="divide-y divide-zinc-200 dark:divide-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-xl border border-zinc-200 dark:border-zinc-800">
-          {charts.map((chart) => (
-            <li key={chart.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-6 py-5 hover:bg-blue-50 dark:hover:bg-zinc-800 transition">
+          {problems.map((problem) => (
+            <li key={problem.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-6 py-5 hover:bg-blue-50 dark:hover:bg-zinc-800 transition">
               <div className="flex-1 min-w-0">
-                <h3 className="text-xl font-semibold text-indigo-700 dark:text-cyan-300 mb-1">{chart.name}</h3>
-                <p className="text-zinc-700 dark:text-zinc-200 text-base">{chart.description}</p>
+                <h3 className="text-xl font-semibold text-indigo-700 dark:text-cyan-300 mb-1">{problem.name}</h3>
+                <p className="text-zinc-700 dark:text-zinc-200 text-base">{problem.description}</p>
               </div>
               <Link
-                href={`/configurations/${chart.id}`}
+                href={`/charts/${problem.id}`}
                 className="mt-3 sm:mt-0 sm:ml-6 px-5 py-2 rounded-full bg-linear-to-r from-indigo-600 via-blue-600 to-cyan-500 text-white font-semibold shadow-md hover:from-indigo-700 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 transition"
               >
                 Voir le graphique
@@ -43,8 +43,8 @@ export default function Home() {
           ))}
         </ul>
         <div className="text-center mt-8">
-          <Link href="/configurations" className="inline-block px-8 py-3 rounded-full bg-linear-to-r from-indigo-600 via-blue-600 to-cyan-500 text-white font-bold shadow-md hover:from-indigo-700 hover:to-cyan-600 transition">
-            Voir toutes les configurations
+          <Link href="/charts" className="inline-block px-8 py-3 rounded-full bg-linear-to-r from-indigo-600 via-blue-600 to-cyan-500 text-white font-bold shadow-md hover:from-indigo-700 hover:to-cyan-600 transition">
+            Voir tous les graphiques
           </Link>
         </div>
       </section>

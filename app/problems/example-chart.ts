@@ -1,6 +1,6 @@
-import { ChartElement } from "./types";
+import { ProblemElement } from "./types";
 
-export const chart1: ChartElement = {
+export const chart1: ProblemElement = {
   id: "example-chart",
   name: "Graphique de Trading Simple",
   description: "Un graphique simple affichant des chandeliers japonais.",
