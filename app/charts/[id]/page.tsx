@@ -141,6 +141,15 @@ export default function ChartPage() {
               <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
               {/* Modal résultat */}
               <div className={`relative px-8 py-6 rounded-xl shadow-2xl text-white text-lg font-bold flex flex-col items-center min-w-[320px] ${showResult === "win" ? "bg-green-600" : "bg-red-600"}`}>
+                {/* Bouton croix fermer */}
+                <button
+                  className="absolute top-2 right-2 text-white text-2xl font-bold hover:text-gray-200 focus:outline-none"
+                  aria-label="Fermer"
+                  onClick={() => setShowResult(null)}
+                  style={{ lineHeight: 1 }}
+                >
+                  ×
+                </button>
                 {showResult === "win" ? "Vous avez gagné !" : "Vous avez perdu."}
                 <div className="flex gap-4 mt-6 justify-center">
                   <button
