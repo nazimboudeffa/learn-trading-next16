@@ -22,7 +22,7 @@ export default function ChallengesIndex() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
           <a
-            href="https://amzn.eu/d/hfZs5IN"
+            href="https://amzn.to/4432vZm"
             target="_blank"
             rel="noopener noreferrer"
             className="block hover:scale-105 transition"
@@ -35,7 +35,7 @@ export default function ChallengesIndex() {
             />
           </a>
           <a
-            href="https://amzn.eu/d/jbQJFQh"
+            href="https://amzn.to/48sH6tL"
             target="_blank"
             rel="noopener noreferrer"
             className="block hover:scale-105 transition"
