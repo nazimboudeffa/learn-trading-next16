@@ -8,7 +8,7 @@ export default function ChallengesIndex() {
     <>
       <Navbar />
       <div className="min-h-screen bg-zinc-50 dark:bg-black py-12 px-4">
-        <h1 className="text-4xl font-extrabold text-center text-indigo-700 dark:text-cyan-300 mb-8">Challenges Chartistes</h1>
+        <h1 className="text-4xl font-extrabold text-center text-indigo-700 dark:text-cyan-300 mb-8">Quizz Chartistes</h1>
         <p className="text-center text-sm text-zinc-500 dark:text-zinc-400 mb-4">
             Veuillez trouver ci-dessous les sources de quelques graphiques utilisés dans les quizz.
         </p>
