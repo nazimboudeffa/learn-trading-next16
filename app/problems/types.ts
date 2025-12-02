@@ -4,9 +4,16 @@ export type ProblemElement = {
   description: string;
   data: {
     time: string;
-    open: number;
-    high: number;
-    low: number;
-    close: number;
+    open: string;
+    high: string;
+    low: string;
+    close: string;
+  }[];
+  futureData?: {
+    time: string;
+    open: string;
+    high: string;
+    low: string;
+    close: string;
   }[];
 };

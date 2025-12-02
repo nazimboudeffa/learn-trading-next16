@@ -2,14 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { CandlestickSeries, createChart, IChartApi } from "lightweight-charts";
-
-type CandlestickData = {
-  time: string;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-};
+import type { CandlestickData } from "lightweight-charts";
 
 interface TradingChartProps {
   rawData: CandlestickData[];
@@ -27,9 +20,10 @@ export default function TradingChart({ rawData }: Readonly<TradingChartProps>) {
     });
 
     const candlestickSeries = chart.addSeries(CandlestickSeries, {
-        upColor: '#26a69a', downColor: '#ef5350', borderVisible: false,
-        wickUpColor: '#26a69a', wickDownColor: '#ef5350',
+      upColor: '#26a69a', downColor: '#ef5350', borderVisible: false,
+      wickUpColor: '#26a69a', wickDownColor: '#ef5350',
     });
+    
     candlestickSeries.setData(rawData);
 
     chart.timeScale().fitContent();
