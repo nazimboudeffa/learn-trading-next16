@@ -4,6 +4,7 @@ export const chartCovid: ProblemElement = {
   id: "krach-covid-2020",
   name: "Krach du COVID-19 (2020)",
   description: "Un graphique représentant la chute violente des marchés lors du début de la pandémie.",
+  stock: "S&P 500",
   data: [
     { time: '2020-03-09', open: '3020.10', high: '3058.20', low: '2814.40', close: '2851.90' },
     { time: '2020-03-10', open: '2851.90', high: '2931.40', low: '2720.80', close: '2888.50' },

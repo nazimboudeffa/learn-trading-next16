@@ -4,6 +4,7 @@ export const chartFTX2022: ProblemElement = {
   id: "crash-ftx-2022",
   name: "Crash Crypto - Effondrement de FTX (2022)",
   description: "Un graphique montrant la chute brutale du Bitcoin lors de la débâcle FTX.",
+  stock: "Bitcoin",
   data: [
     { time: '2022-11-06', open: "21500.00", high: "21780.00", low: "20800.00", close: "21140.00" },
     { time: '2022-11-07', open: "21140.00", high: "21220.00", low: "19810.00", close: "20100.00" },

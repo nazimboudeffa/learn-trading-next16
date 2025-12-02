@@ -1,7 +1,11 @@
+// Format date yyyy-mm-dd en dd/mm/yyyy
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import TradingChart from "../../components/TradingChart";
 import { useState, useRef } from "react";
+import { problems } from "../../problems/index";
+import Navbar from "../../components/Navbar";
+
 // Fonction utilitaire pour calculer le résultat du trade
 function getTradeResult({ entryCandle, futureData, buyClicked, sellClicked }: {
   entryCandle: unknown,
@@ -18,8 +22,13 @@ function getTradeResult({ entryCandle, futureData, buyClicked, sellClicked }: {
   }
   return result;
 }
-import { problems } from "../../problems/index";
-import Navbar from "../../components/Navbar";
+
+// Format date yyyy-mm-dd en dd/mm/yyyy
+function formatDate(dateStr?: string) {
+  if (!dateStr) return '';
+  const [y, m, d] = dateStr.split('-');
+  return `${d}/${m}/${y}`;
+}
 
 export default function ChartPage() {
   const router = useRouter();
@@ -89,7 +98,17 @@ export default function ChartPage() {
       <main className="min-h-screen bg-linear-to-br from-blue-50 via-cyan-50 to-indigo-100 dark:from-blue-950 dark:via-cyan-950 dark:to-indigo-900 flex items-center justify-center py-12 px-4">
         <div className="max-w-2xl w-full bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 p-4 sm:p-6 md:p-8 flex flex-col items-center">
           <h1 className="text-3xl font-extrabold mb-2 text-indigo-700 dark:text-cyan-300 text-center drop-shadow-lg">{problem.name}</h1>
-          <p className="mb-6 text-zinc-700 dark:text-zinc-200 text-center text-lg">{problem.description}</p>
+          <p className="text-zinc-700 dark:text-zinc-200 text-center text-lg">{problem.description}</p>
+          {problem.stock && (
+            <div className="mb-3">
+              <p className="text-zinc-500 dark:text-zinc-400 text-center text-md italic">{problem.stock}</p>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 text-sm font-semibold shadow-sm border border-zinc-200 dark:border-zinc-700 mt-2 mb-4">
+                <span>{formatDate(problem.data[0]?.time)}</span>
+                <span className="mx-1 text-zinc-400">—</span>
+                <span>{formatDate(problem.data.at(-1)?.time)}</span>
+              </div>
+            </div>
+          )}
           <div className="w-full flex flex-col items-center mb-4 gap-4 sm:gap-6">
             <TradingChart rawData={chartData} />
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 w-full justify-center">

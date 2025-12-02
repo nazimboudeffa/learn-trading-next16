@@ -4,6 +4,7 @@ export const chart2008: ProblemElement = {
   id: "crash-financier-2008",
   name: "Crash Financier 2008",
   description: "Un graphique représentant le crash financier de 2008.",
+  stock: "S&P 500",
   data: [
     { time: '2008-09-15', open: '1250.92', high: '1250.92', low: '1192.70', close: '1192.70' },
     { time: '2008-09-16', open: '1188.31', high: '1214.84', low: '1169.28', close: '1213.60' },
