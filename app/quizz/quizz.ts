@@ -50,4 +50,17 @@ export const chartistQuizz: ChartistQuizz[] = [
     ],
     answer: "B",
   },
+  {
+    id: "quizz-exemple-1",
+    title: "Identification de Figure Chartiste",
+    description: "Voici un exemple de figure chartiste à identifier.",
+    image: "/quizz/quizz-exemple-1.png",
+    question: "Que représente cette figure chartiste ?",
+    options: [
+      { value: "A", label: "ETE" },
+      { value: "B", label: "Triangle Symétrique" },
+      { value: "C", label: "Double Top" },
+    ],
+    answer: "B",
+  }
 ];

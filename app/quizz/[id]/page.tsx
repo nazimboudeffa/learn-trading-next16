@@ -28,13 +28,17 @@ export default function ChallengePage() {
 				<div className="mb-8">
 					<Image src={quizz.image} alt={quizz.title} width={480} height={320} className="rounded-lg shadow border border-zinc-200 dark:border-zinc-700 bg-white" style={{maxWidth: 480, height: "auto"}} />
 				</div>
-				<form className="w-full max-w-xs flex flex-col gap-4" onSubmit={e => {e.preventDefault(); setShowResult(true);}}>
+				<div className="w-full max-w-xs flex flex-col gap-4">
 					<label htmlFor="challenge-select" className="font-semibold">{quizz.question}</label>
 					<select
 						id="challenge-select"
 						className="rounded border border-indigo-400 dark:border-cyan-400 px-4 py-3 text-base bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-cyan-400 shadow-sm transition"
 						value={answer ?? ''}
-						onChange={e => setAnswer(e.target.value)}
+						onChange={e => {
+							setAnswer(e.target.value);
+							if (e.target.value) setShowResult(true);
+							else setShowResult(false);
+						}}
 						required
 					>
 						<option value="" disabled className="text-zinc-400 dark:text-zinc-500">Choisir…</option>
@@ -48,8 +52,7 @@ export default function ChallengePage() {
 							</option>
 						))}
 					</select>
-					<button type="submit" className="mt-2 px-5 py-2 rounded-full bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-700 transition">Valider</button>
-				</form>
+				</div>
 				{showResult && (
 					<div className={`mt-6 px-6 py-4 rounded-lg shadow text-white font-bold text-lg ${answer === quizz.answer ? "bg-green-600" : "bg-red-600"}`}>
 						{answer === quizz.answer ? "Bravo, bonne réponse !" : "Ce n'est pas la bonne réponse, réessaie !"}

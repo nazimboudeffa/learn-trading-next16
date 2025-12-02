@@ -1,6 +1,8 @@
 
+
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import { chartistQuizz } from "./quizz";
 
 export default function ChallengesIndex() {
 
@@ -12,8 +14,11 @@ export default function ChallengesIndex() {
         <p className="text-center text-sm text-zinc-500 dark:text-zinc-400 mb-4">
             Veuillez trouver ci-dessous les sources de quelques graphiques utilisés dans les quizz.
         </p>
-        <p className="text-center text-sm text-zinc-500 dark:text-zinc-400 mb-6">
+        <p className="text-center text-sm text-zinc-500 dark:text-zinc-400 mb-4">
             Aucune explication n&apos;est donnée dans les quizz relatifs pour respecter les droits d&apos;auteur des livres et vous inciter à les lire, merci de votre compréhension.
+        </p>
+        <p className="text-center text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+          Les autres graphiques chartistes proviennent de diffèrents sites web publics dédiés à l&apos;analyse technique.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
           <a
@@ -47,27 +52,15 @@ export default function ChallengesIndex() {
           Teste ta reconnaissance des figures chartistes à travers des exercices interactifs&nbsp;!
         </p>
         <ul className="max-w-xl mx-auto flex flex-col gap-6">
-          <li className="bg-white dark:bg-zinc-900 rounded-xl shadow p-6 border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-indigo-700 dark:text-cyan-300 mb-1">Triangle Symétrique</h2>
-              <p className="text-zinc-700 dark:text-zinc-200">Identifie la figure sur le graphique et réponds au quiz&nbsp;!</p>
-            </div>
-            <Link href="/quizz/triangle-symetrique" className="mt-4 sm:mt-0 sm:ml-6 px-5 py-2 rounded-full bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-700 transition">Commencer</Link>
-          </li>
-          <li className="bg-white dark:bg-zinc-900 rounded-xl shadow p-6 border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-indigo-700 dark:text-cyan-300 mb-1">Double Top</h2>
-              <p className="text-zinc-700 dark:text-zinc-200">Repère le double sommet et valide ta réponse.</p>
-            </div>
-            <Link href="/quizz/double-top" className="mt-4 sm:mt-0 sm:ml-6 px-5 py-2 rounded-full bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-700 transition">Commencer</Link>
-          </li>
-          <li className="bg-white dark:bg-zinc-900 rounded-xl shadow p-6 border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-indigo-700 dark:text-cyan-300 mb-1">Épaule-Tête-Épaule</h2>
-              <p className="text-zinc-700 dark:text-zinc-200">Analyse la figure et réponds au challenge interactif.</p>
-            </div>
-            <Link href="/quizz/ete" className="mt-4 sm:mt-0 sm:ml-6 px-5 py-2 rounded-full bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-700 transition">Commencer</Link>
-          </li>
+          {chartistQuizz.map((quizz) => (
+            <li key={quizz.id} className="bg-white dark:bg-zinc-900 rounded-xl shadow p-6 border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-indigo-700 dark:text-cyan-300 mb-1">{quizz.title}</h2>
+                <p className="text-zinc-700 dark:text-zinc-200">{quizz.description}</p>
+              </div>
+              <Link href={`/quizz/${quizz.id}`} className="mt-4 sm:mt-0 sm:ml-6 px-5 py-2 rounded-full bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-700 transition">Commencer</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </>
