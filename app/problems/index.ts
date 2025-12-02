@@ -8,8 +8,8 @@ import { chartFTX2022 } from "./crash-ftx-2022";
 
 export const problems = [
     chart1929,
-    chartDotCom,
     chart1987,
+    chartDotCom,
     chart2008,
     chartCovid,
     chartBTC2017,
